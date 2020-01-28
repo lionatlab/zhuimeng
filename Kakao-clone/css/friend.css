@@ -45,3 +45,18 @@
 .friend .chat__timestamp {
     font-size: 12px;
 }
+
+.friend .friend__now-listening {
+    border: 2px solid #75dd99;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.friend__now-listening span {
+    opacity: 0.6;
+}
+
+.friend__now-listening i {
+    font-size: 12px;
+}
