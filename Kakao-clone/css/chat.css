@@ -21,42 +21,61 @@
     min-height: 1000vh;
 }
 
-.chat__write {
+.chat__write-container {
     position: fixed;
-    bottom: 50px;
-    width: 80%;
+    bottom: 0;
     display: flex;
     background-color: #fcfcfc;
     padding: 0px 20px;
-    border-radius: 40px;
+
 
     /* fixed된 것을 가운데로 정렬하는 방법 */
     margin: 0 auto;
     left: 0;
     right: 0;
 
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .25), 0 8px 16px -8px rgba(0, 0, 0, .3), 0 -6px 16px -6px rgba(0, 0, 0, .025);
+    /* box-shadow: 0 13px 27px -5px rgba(50, 50, 93, .25), 0 8px 16px -8px rgba(0, 0, 0, .3), 0 -6px 16px -6px rgba(0, 0, 0, .025); */
     justify-content: space-between;
     align-items: center;
 }
 
-.chat__write i {
+.chat__write {
+    bottom: 0px;
+    border-radius: 0;
+    padding: 20px 60px;
+    width: 90%;
+    border: none;
+    font-size: 14px;
+}
+
+.chat__icon-left {
+    position: absolute;
+}
+
+.char__icon-right {
+    position: absolute;
+    right: 10px;
+}
+
+.chat__write:focus {
+    outline: none;
+}
+
+.chat__write:focus~.chat__icon {
+    opacity: 0;
+}
+
+.chat__icon {
+    font-size: 18px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.chat__write:focus .chat__write i {
     font-size: 22px;
 }
 
 .chat__write-column:nth-child(2) {
     width: 80%;
-}
-
-.chat__write-column input {
-    padding: 20px;
-    width: 100%;
-    border: none;
-    font-size: 14px;
-}
-
-.chat__write-column input:focus {
-    outline: none;
 }
 
 .chat-screen .chat__messages {
