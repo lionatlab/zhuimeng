@@ -1,4 +1,71 @@
-body {
+/* COMMON */
+.body__container {
     font-family: 'Roboto', sans-serif;
-    font-size: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* BUTTON */
+.btn {
+    height: 34px;
+    background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
+    border: solid 1px #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.btn:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.btn.btn--primary {
+    border: solid 1px #65b836;
+    color: #fff;
+    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+}
+
+/* INPUT TEXT */
+.input-text {
+    height: 34px;
+    padding: 0 10px;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset;
+    font-size: 16px;
+}
+
+.input-text:focus {
+    border-color: #51a7e8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset,
+        0 0 5px rgba(81, 167, 232, 0.5);
+}
+
+/* Vender Prefix (브라우저 업체별 접두사) */
+.input-text::-webkit-input-placeholder {
+    color: #cacaca;
+}
+
+.input-text::-ms-input-placeholder {
+    color: #cacaca;
+}
+
+.input-text::-moz-input-placeholder {
+    color: #cacaca;
 }
