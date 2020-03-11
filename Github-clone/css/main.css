@@ -10,7 +10,7 @@ a {
     text-decoration: none;
 }
 
-/* FLOAT CLEARFIX */
+/* COMMON - FLOAT CLEARFIX */
 .clearfix::after {
     content: "";
     clear: both;
@@ -26,7 +26,7 @@ a {
 }
 
 
-/* BUTTON */
+/* COMMON - BUTTON */
 .btn {
     height: 34px;
     background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
@@ -60,8 +60,8 @@ a {
     background: #55a532 linear-gradient(#91dd70, #55ae2e);
 }
 
-/* INPUT TEXT */
-.input-text {
+/* COMMON - INPUT TEXT */
+.input--text {
     height: 34px;
     padding: 0 10px;
     border: solid 1px #ddd;
@@ -72,23 +72,52 @@ a {
     font-size: 16px;
 }
 
-.input-text:focus {
+.input--text:focus {
     border-color: #51a7e8;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075) inset,
         0 0 5px rgba(81, 167, 232, 0.5);
 }
 
-/* Vender Prefix (브라우저 업체별 접두사) */
-.input-text::-webkit-input-placeholder {
+/* COMMON - Vender Prefix (브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder {
     color: #cacaca;
 }
 
-.input-text::-ms-input-placeholder {
+.input--text::-ms-input-placeholder {
     color: #cacaca;
 }
 
-.input-text::-moz-input-placeholder {
+.input--text::-moz-input-placeholder {
     color: #cacaca;
+}
+
+/* COMMON - SUMMARY */
+.summary {}
+
+.summary__title {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    color: #767676;
+    line-height: 1.5;
+}
+
+/* COMMON - SECTION & INNER */
+.section {
+    position: relative;
+}
+
+.section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* HEADER */
@@ -99,9 +128,7 @@ header {
 }
 
 header .inner {
-    max-width: 980px;
     height: 78px;
-    margin: 0 auto;
 }
 
 header .menu-group {
@@ -182,4 +209,81 @@ header .sub-menu li a {
 
 header .sub-menu li a:hover {
     color: #4078c0;
+}
+
+/* VISUAL */
+.section--visual {
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+}
+
+.section--visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.section--visual .inner {
+    padding: 160px 0;
+    display: flex;
+}
+
+.section--visual .summary {
+    /* flex-grow: 1;
+    flex-basis: 0; */
+    flex: 1;
+    margin-right: 90px;
+}
+
+.section--visual .summary__title {
+    font-size: 54px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+        0 1px 25px rgba(0, 0, 0, .75);
+}
+
+.section--visual .summary__description {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+        0 1px 25px rgba(0, 0, 0, .75);
+}
+
+#sign-form {
+    width: 340px;
+    margin-top: 16px;
+}
+
+#sign-form li {
+    margin-bottom: 17px;
+}
+
+#sign-form li:last-child {
+    margin-bottom: 0;
+}
+
+#sign-form .input--text {
+    width: 100%;
+    height: 40px;
+}
+
+#sign-form .caption {
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, .6);
+    line-height: 1.5;
+    text-align: center;
+}
+
+#sign-form [type="submit"] {
+    width: 100%;
+    height: 62px;
+    padding: 0 25px;
+    font-size: 20px;
+    justify-content: center;
 }
