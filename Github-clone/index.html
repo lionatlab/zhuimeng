@@ -156,17 +156,64 @@
                                 development process.</p>
                         </li>
                     </ul>
-
-
-
-
                 </div>
             </div>
-
         </section>
 
-
+        <!-- WHERE IS -->
+        <section class="section section--where-is">
+            <div class="inner">
+                <div class="summary">
+                    <h2 class="summary__title">
+                        Where is GitHub?
+                    </h2>
+                    <p class="summary__description">
+                        GitHub is where people build software. More than 18 million people use GitHub to discover, fork,
+                        and contribute to over 48 million projects.
+                    </p>
+                </div>
+                <div id="map"></div>
+            </div>
+        </section>
     </div>
+
+    <!-- INIT GOOGLE MAP -->
+    <script>
+        function initMap() {
+            const myLatLng = {
+                lat: 37.782293,
+                lng: -122.391240
+            }
+            const map = new google.maps.Map(
+                document.getElementById('map'), {
+                    center: myLatLng,
+                    scrollwheel: false,
+                    zoom: 18
+                }
+            );
+            const marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'GitHub'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap"
+        async defer>
+    </script>
+
+    <!-- PRICING CARD -->
+    <section class="section section--pricing">
+        <div class="inner">
+            <div class="card">
+                <div class="cell cell1">
+                    <a href="#" class="btn btn--primary">Sign up for GitHub</a>
+                </div>
+                <div class="cell cell2">Public projects are always free. Work together across unlimited private
+                    repositories for $7 / month.</div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
